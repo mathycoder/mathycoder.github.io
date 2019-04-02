@@ -1,11 +1,11 @@
 # Site settings
-author: Adam S
-title: 
+author: Adam Sarli
+title: A Teacher Learns to Code
 header-img: img/home-bg.png
 email: adam.sarli@gmail.com
-copyright_name: Adam S
+copyright_name: Adam Sarli
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Aspiring software engineer
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  mathycoder
