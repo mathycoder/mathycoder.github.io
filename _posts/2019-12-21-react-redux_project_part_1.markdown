@@ -19,29 +19,36 @@ Before I even began tackling Redux and making sense of a database on the fronten
 
 I knew I wanted this page to be fun for teachers, which to me meant interactive.  So I started with my first React component, <NewProgressionContainer />.  I spent some time integrating with YouTube and Vimeo APIs to query videos, and stored these video objects in the component's local state.  Over time, I pulled most of the local state out into Redux, which made the component a lot cleaner.  More on Redux later!  But to make the page truly interactive, I started researching ways to implement drag and drop.  
 
-When dragging a video from the YouTube/Vimeo query, I used built-in JavaScript strategies.  [MDN DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer)
+When dragging a video from the YouTube/Vimeo query, I used built-in JavaScript strategies.  [MDN DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer).
 
-```<div draggable
-            onDragStart={event => handleDragStart(event, video)}
 ```
+<div draggable
+  onDragStart={event => handleDragStart(event, video)}
+	...
+</div>
+```
+
 
 Each of my videos was wrapped in a div labeled 'draggable', which is all you need to start dragging all of your divs around.  JavaScript comes ready with the callback onDragStart, which was how I was able to keep track of which video was being dragged.  You can then store the data within an event's dataTransfer object, which is available for all drag events.  
 
-``` handleDragStart = (event, video) => {
+ ```
+ handleDragStart = (event, video) => {
     let data = JSON.stringify(video)
     event.dataTransfer.setData("video", data)
-  }  ``` 
+  } 
+  ```
 	
-	On the agenda itself, I used the callbacks onDragOver, onDragLeave, and onDrop.  onDrop was how I accessed the video that was dropped, and then updated the state to add that video to my progression.  My event handler looked like this:
+On the agenda itself, I used the callbacks onDragOver, onDragLeave, and onDrop.  onDrop was how I accessed the video that was dropped, and then updated the state to add that video to my progression.  My event handler looked like this:
 	
-	```
+```
 	  handleOnDrop = (event) => {
-      let video = event.dataTransfer.getData("video")
-      video = JSON.parse(video)
-      this.addToProgression(event, video) 
-	}```
+      let video = event.dataTransfer.getData("video");
+      video = JSON.parse(video);
+      this.addToProgression(event, video);
+	}
+```
 	
-	The other callbacks--onDragOver and onDragLeave--allowed for changes to CSS when dragging a video over the progression container.  
+The other callbacks--onDragOver and onDragLeave--allowed for changes to CSS when dragging a video over the progression container.  
 	
 # 	react-beautiful-dnd 
 After I was able to drag video files into my new progression, I knew I wanted an interactive way for teachers to reorder them.  Having seen websites where you can drag an item and watch all of the other adjust, I knew I wanted that here!  After experimenting with coding this from scratch, I realized this would be a good opportunity to integrate my application with a drag and drop package.  I selected react-beautiful-dnd, mainly because it included helpful video lessons that would help me utilize their package: [Egghead react-beautiful-dnd](https://egghead.io/lessons/react-course-introduction-beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd)
