@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "React-Redux Project Part 1"
-date:       2019-12-21 19:22:56 +0000
+date:       2019-12-21 14:22:56 -0500
 permalink:  react-redux_project_part_1
 ---
 
@@ -22,14 +22,15 @@ I knew I wanted this page to be fun for teachers, which to me meant interactive.
 When dragging a video from the YouTube/Vimeo query, I used built-in JavaScript strategies.  [MDN DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer)
 
 ```<div draggable
-            onDragStart={event => handleDragStart(event, video)}```
+            onDragStart={event => handleDragStart(event, video)}
+```
 
 Each of my videos was wrapped in a div labeled 'draggable', which is all you need to start dragging all of your divs around.  JavaScript comes ready with the callback onDragStart, which was how I was able to keep track of which video was being dragged.  You can then store the data within an event's dataTransfer object, which is available for all drag events.  
 
 ``` handleDragStart = (event, video) => {
     let data = JSON.stringify(video)
     event.dataTransfer.setData("video", data)
-  } ``` 
+  }  ``` 
 	
 	On the agenda itself, I used the callbacks onDragOver, onDragLeave, and onDrop.  onDrop was how I accessed the video that was dropped, and then updated the state to add that video to my progression.  My event handler looked like this:
 	
@@ -38,8 +39,7 @@ Each of my videos was wrapped in a div labeled 'draggable', which is all you nee
       let video = event.dataTransfer.getData("video")
       video = JSON.parse(video)
       this.addToProgression(event, video) 
-	}
-	```
+	}```
 	
 	The other callbacks--onDragOver and onDragLeave--allowed for changes to CSS when dragging a video over the progression container.  
 	
