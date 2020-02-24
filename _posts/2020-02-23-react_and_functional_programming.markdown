@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "React and Functional Programming"
-date:       2020-02-23 21:21:31 +0000
+date:       2020-02-23 16:21:32 -0500
 permalink:  react_and_functional_programming
 ---
 
@@ -80,7 +80,7 @@ When we use this hook, we create a state variable for a given component.  Intere
 
 Setting the state in this way is interesting.  For one, it's asynchronous.  Also, it feels a lot like a mini version of a reducer.  While we're not creating an entirely new object, we are creating a new value for--in this case--a string.  So it would make sense that setState would keep some sort of history, so we could see each value we've set our state variable equal to.  Turns out, it does!  [4 Examples of useState](https://daveceddia.com/usestate-hook-examples/) talks about a behind-the-scenes object connected to the component that has "state cells", allowing you to access the previous state value.  
 
-## Declative over imperative (procedural) programming
+## Declarative over imperative (procedural) programming
 We're moving right along in exploring some of the ways React/Redux embraces a functional programming paradigm.  We've got pure functions, centralized state, and little to no mutability.  Perhaps you could argue that React still leans toward object-oriented programming with its class components.  I hear you, but I raise you this: React is declarative!  Most object-oriented programming languages are imperative or procedural. 
 
 When I first started learning JavaScript, my first project was built using JavaScript Model Objects, which are basically ES6 class instances.  If I wanted to modify something on the screen, I needed to create a very procedural method within one of the classes.  Find the main element in the DOM; clear it; create a new element; attach it to the DOM.  It was kind of amusing actually.  I had this awesome gradebook app for Rails, and spent a few weeks converting it into vanillaJS.  When I was done, the application didn't really run much faster than it did in Rails.  I was surprised: everyone always talked about how much faster JavaScript was!
