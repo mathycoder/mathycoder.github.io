@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "FlexSeats Part II - React Native Front-End"
-date:       2020-03-22 13:42:45 +0000
+date:       2020-03-22 09:42:46 -0400
 permalink:  flexseats_part_ii_-_react_native_front-end
 ---
 
@@ -42,13 +42,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: 'rgb(125, 166, 200)',
-            }
-          }}
-        >
+        <Stack.Navigator headerStyle={ backgroundColor: 'rgb(125, 166, 200)' }>
           <Stack.Screen
             name="Home"
             component={HomeScreen}
