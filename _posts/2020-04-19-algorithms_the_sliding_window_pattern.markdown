@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Algorithms: The Sliding Window Pattern"
-date:       2020-04-19 22:28:24 +0000
+date:       2020-04-19 18:28:25 -0400
 permalink:  algorithms_the_sliding_window_pattern
 ---
 
@@ -9,7 +9,7 @@ permalink:  algorithms_the_sliding_window_pattern
 Let's take a break from project-based blogs and take a look at one of the problem-solving patterns taught in the Udemy Course [JavaScript Algorithms and Data Structures Master Class](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/).  Before going into some of the most common algorithms in Computer Science, he explores what he calls common Problem Solving Patterns that can help you write more efficient algorithms.  
 
 ## A connection between algorithms and algebraic reasoning
-Algorithms in computer science feel remind me a lot of teaching algebraic reasoning to my middle schoolers.  A goal in algebraic thinking is to get students to *generalize* their strategies.  I remember giving my class a problem of the growing tables.  Each square table sat four students on each side, but when you put two tables together, you could only fit 6 students (2 on top, 2 on bottom, and one on each end).  Three tables pushed together fit 8 students (3 on top, 3 on the bottom, and one on each end).  And so on.  The question was how many students would fit if you pushed 100 tables together?
+Algorithms in computer science remind me a lot of teaching algebraic reasoning to my middle schoolers.  A goal in algebraic thinking is to get students to *generalize* their strategies.  I remember giving my class a problem of the growing tables.  Each square table sat four students on each side, but when you put two tables together, you could only fit 6 students (2 on top, 2 on bottom, and one on each end).  Three tables pushed together fit 8 students (3 on top, 3 on the bottom, and one on each end).  And so on.  The question was how many students would fit if you pushed 100 tables together?
 
 Students took many approaches to solve this problem.  Some drew pictures of each table combination.  Others thought to make a table, counting from 1 table up to 100 and adding 2 students each time.  But those that used algebraic reasoning where able to generalize the situation.  Some realized you could just do 100 + 100 (top and bottom) + 1 + 1 (the two ends).  Others generalized like this with pictures.  And finally, some generalized with an expression like 2T + 2.  
 
