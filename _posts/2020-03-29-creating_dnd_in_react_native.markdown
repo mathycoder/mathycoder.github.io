@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Creating DnD in React Native"
-date:       2020-03-29 20:16:14 +0000
+date:       2020-03-29 16:16:15 -0400
 permalink:  creating_dnd_in_react_native
 ---
 
@@ -49,7 +49,7 @@ I decided to set up my panResponder at the parent level above each desk.  Both o
       }
     })
   ).current;
-	```
+```
 	
 My starter code for this came from [React Native: PanResponder](https://reactnative.dev/docs/panresponder).  `  const pan = useRef(new Animated.ValueXY()).current;` creates a reference to a new Animated value.  This tracks an (x,y) position that will be linked to my desk that is dragging, which will be linked to an `<Animated.View>` component.  As the desk drags, this value will change dynamically, triggering a translation animation to make the desk move across the screen.  
 
